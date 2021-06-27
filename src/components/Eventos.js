@@ -90,3 +90,49 @@ export class EventosES7 extends Component{
         )
     }
 }
+
+// OPCION 1: SE PUEDE OPTIMIZAR ESTA PORCION DE CODIGO, YA QUE SI SE HACE COMO FUNCION, HAY QUE 
+// HACER UN RETORNO EXPLICITO...  Y SEE PUEDEN OPTIMIZAR LINEAS DE CODIGO
+// function Boton (props) {
+//     return(
+//         <button onClick={props.MyOnClick}>Boton hecho componente</button>
+//     );
+//}
+
+// SE PUEDEN CREAR VARIABLES EXPRESADAS 
+// LAS ARROW FUNCTIONS HACEN UN RETURN IMPLICITO !!!1
+
+// OPCION 1: SE PUEDE SIMPLIFICAR MAS ESTA COMPONENTE 
+// const Boton = (props) => (
+//     <button onClick={props.MyOnClick}>Boton hecho componente</button>
+// );
+
+const Boton = ({MyOnClick}) => (
+    <button onClick={MyOnClick}>Boton hecho componente</button>
+);
+
+
+
+
+export class MasSobreEventos extends Component{
+
+    handleClick = (e, mensaje) => {
+        console.log(e);
+        console.log(e.nativeEvent);
+        console.log(e.target);
+        console.log(e.nativeEvent.target);
+        console.log(mensaje);
+    }
+
+    render(){
+        return(
+            <div>
+                <h2>Mas Sobre Eventos</h2>
+                <button onClick={(e) => this.handleClick(e, "Hola pasando parametro desde un evento")}>Saludar</button>
+                {/* Evento personalizado */}
+                {/* <Boton onClick={(e) => this.handleClick(e, "Hola pasando parametro desde un evento")}/> */}
+                <Boton MyOnClick={(e) => this.handleClick(e, "Hola pasando parametro desde un evento")}/>
+            </div>
+        )
+    }
+}
