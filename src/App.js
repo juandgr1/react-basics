@@ -1,12 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
-import "./App.css";
 import Componente from "./components/Componente";
 import Propiedades from "./components/propiedades";
 import Estado from "./components/Estado";
 import RenderizadoCondicional from "./components/RenderizadoCondicional";
 import RenderizadoElementos from "./components/RenderizadoElementos";
-import Eventos from "./components/Eventos";
+import {EventosES6, EventosES7} from "./components/Eventos";
+import "./App.css";
 
 function App() {
   return (
@@ -46,7 +46,9 @@ function App() {
           <hr />
           <RenderizadoElementos/>
           <hr />
-          <Eventos/>
+          <EventosES6/>
+          <hr />
+          <EventosES7/>
         </section>
       </header>
     </div>
