@@ -27,8 +27,8 @@ export default class RenderizadoElementos extends Component{
                 <h2>Renderizado de Elementos</h2>
                 <h3>Estaciones del Año</h3>
                 <ol>
-                    {this.state.seassons.map((el) => (
-                    <li key={el.id}>{el}</li>
+                    {this.state.seassons.map((el,index) => (
+                    <li key={index}>{el}</li>
                     ))}
                     
                 </ol>
